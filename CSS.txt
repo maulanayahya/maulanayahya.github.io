@@ -1,0 +1,22 @@
+display inline :
+- memblok sesuai konten
+- no lebar dan tinggi
+- margin top-bottom tidak berpengaruh
+contoh default :
+<span> , <a>, <img>
+
+display block :
+- memblok sesuai browser
+- yes lebar dan tinggi
+- yes margin top-bottom dll
+contoh default:
+<div>,<p>,<form>,<footer>,<header>,<section>
+
+display inline-block :
+- karakternya sejajar namun value nya
+seperti block yaitu bisa atur tinggi lebar margin dll
+
+display none:
+-tidak di tampilkan namun kode masih ada
+
+

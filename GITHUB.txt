@@ -1,0 +1,116 @@
+CATATAN GIT
+
+KATEGORI INSTALL PERTAMAKALI GIT (WAJIB SETTING) :
+- perintah inisiasi config git
+git config --global user.name "maulanayahya"
+git config --global user.email maulanasherlock@gmail.com
+
+-perintah list config git saat ini
+git config --list
+
+KATEGORI START (WAJIB 1x) :
+- perintah untuk memulai git
+git init .
+git init nama_folder
+
+pilih salahsatu maka akan ada folder .git
+
+KATEGORI PROSES (WAJIB SETIAP PERUBAHAN FILE):
+1. perintah untuk ubah ke staged (menandai file)
+git add filename.html
+git add filename.html filename2.html (menandai beberapa file)
+git add . (ini untuk menandai semua file)
+pilih salahsatu
+
+2. perintah untuk ubah ke commit (masuk ke pencatatan versi)
+git commit -m "Nama Bebas"
+
+3. perintah untuk push ke github
+git push nama_remote master
+
+4. perintah buat remote https
+git remote add nama_bebas https://github.com/username/username.github.io.git
+
+5. perintah untuk cek remote
+git remote
+
+6. perintah untuk lihat metode remote
+git remote -v
+
+PERINTAH CREATE :
+1. perintah untuk membuat branch
+git branch nama_bebas (contoh: git branch kuda)
+
+2. perintah membangun repo git scr langsung tanpa membuat folder
+git init nama_folder
+
+contoh "git init repo-senja" maka akan di buatkan folder repo
+yang di dalam nya berisi folder .git
+
+PERINTAH READ :
+1. perintah untuk melihat status git
+git status
+
+2. perintah untuk melihat list branch yg aktif
+git branch
+
+note: tanda (*) untuk menunjukkan branch lokasi kita saat ini
+
+3. perintah untuk melihat log atau history git
+git log
+
+4. perintah untuk mengabaikan folder
+tambahkan file dgn nama ".gitignore" 
+
+5. perintah untuk pindah ke branch
+git checkout nama_branch
+
+
+PERINTAH UPDATE :
+1. perintah untuk menggabungkan branch ke branch master(cabang utama)
+git merge nama_branch
+
+note: harus pindah ke posisi branch master
+git branch master
+
+
+PERINTAH DELETE :
+1. perintah untuk hapus branch
+git branch -d nama_branch
+
+note: harus pindah ke branch master
+git branch master
+
+2. perintah untuk hapus .git 
+rmdir /s .git
+
+3. perintah hapus commit permanen
+git reset --hard 5_digit_awal_hash_commit
+contoh : git reset --hard 323bd
+
+NOTE: jika file tinggal 1 commit maka hapus paling atas
+jangan urutan bawah
+
+note : jika hapus folder .git maka
+akan hancurkan history pencatatan versi commit permanen
+jika ingin bangun repo git lgi maka harus 
+inisiasi lgi dengan perintah "git init ." tanda "." (titik)
+artinya buatkan git di lokasi saat ini.
+
+4. perintah hapus file di folder repo
+del .
+
+maka akan hapus semua file dalam folder repo
+
+
+
+
+
+
+
+
+
+
+
+
+

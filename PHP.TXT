@@ -1,0 +1,26 @@
+tambah
+mysqli_query($database ,"INSERT INTO tabel (user) VALUES ('$var') ");
+
+update
+mysqli_query($database, "UPDATE tabel SET field='$var', field='$var' WHERE field='$var' ");
+
+
+edit
+mysqli_query($database, "SELECT * FROM tabel WHERE field='$var' ");
+
+
+hapus
+mysqli_query($database, "DELETE FROM tabel WHERE field='$var' ");
+
+
+
+hapus semua
+mysqli_query($database, "DELETE FROM tabel WHERE field");
+
+
+validasi aman
+
+$data = stripslashes(strip_tags(htmlspecialchars(htmlentities($var, ENT_QOUTES)))); 
+
+SERVER
+mysqli_real_escape_string($db, $data);
