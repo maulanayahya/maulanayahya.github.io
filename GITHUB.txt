@@ -1,5 +1,11 @@
 CATATAN GIT
 
+NOTE! :
+TAMBAHKAN PERINTAH BERIKUT SETELAH ADD REMOTE GIT JIKA ADA PROJEK BARU
+git pull nama_remote master --allow-unrelated-histories
+
+INI HANYA SATU KALI SETIAP ADA REPOSITORI BARU DI LOCAL DISK KITA
+
 KATEGORI INSTALL PERTAMAKALI GIT (WAJIB SETTING) :
 - perintah inisiasi config git
 git config --global user.name "maulanayahya"
