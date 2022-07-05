@@ -1,5 +1,14 @@
 CATATAN PENGALAMAN IT
 
+- UNTUK CODING
+SEBAIKNYA GUNAKAN PERBANDINGAN SATU LOGIKA
+CONTOH: 
+if($var == "Aku"){
+
+}
+
+gunakan logika satu saja biar tidak bingung
+seperti ini =>>> ($var == "Aku")
 
 - PERINTAH UNTUK CEK KEASLIAN FILE DARI SUMBER ASLI :
 
