@@ -1,5 +1,133 @@
 CATATAN PENGALAMAN IT
 
+- CODING UPDATE 6
+FILTER,MAP,REDUCE
+
+const angka = [-1,8,9,1,4,-5,-4,3,2,9];
+
+	function methodChain(){
+		
+	let find5 = angka.filter(a => a > 5) //TANGKAP ARRAY DAN FILTER
+	.map(a => a*3) //PETAKAN SEMUA ISI ARRAY LALU TIAP ISI KALI 3
+	.reduce((a,b)=> a+b ); //TANGKAP SEMUA ARRAY PADA MAP LALU JUMLAHKAN SEMUA
+		
+	console.log(find5);
+		
+		
+	}
+	
+	methodChain();
+
+NOTE: LIHAT PENJELASAN YG DI SLASH "//" DI ATAS
+UNTUK MAP SIFATNYA MEMETAKAN DAN NILAINYA AKAN TETAP
+SESUAI nilai paling terbaru dari hasil fungsi filter atau yg lain
+
+- CODING UPDATE 5
+PARAMETER BISA PANGGIL VARIABEL UTUH
+
+CONTOH :
+const angka = [-1,8,9,1,4,-5,-4,3,2,9];
+
+const newAngka = angka.filter(function(a){ //PERHATIKAN INI
+
+	return a >= 3; //PERHATIKAN INI
+
+});
+
+PERHATIKAN "function(a){}" ada sebuah parameter "a"
+dimana parameter ini bisa memanggil variabel "angka"
+lalu "a" ini bisa di gunakan ke dalam fungsi tersebut
+sbg contoh di dalam fungsi nya ada "return a" dan untuk
+nama dalam parameter bebas karna antara variabel angka
+dan parameter a itu sebenarnya menyatu
+
+
+- CODING UPDATE 4
+HIGHER ORDER FUNCTION
+
+CONTOH:
+function repeat(n, action){
+	for(let i = 0; i < n; i++){
+		action(i);
+	}
+
+}
+
+repeat(10, console.log); //tampilkan angka 1-10 dlm fungsi console.log
+
+NOTE: PARAMETER BISA GANTI APAPUN TERMASUK FUNGSI
+KYK CODING DI ATAS action(i) itu sama dgn console.log(i)
+KENAPA? KARNA KITA PANGGIL FUNGSI NYA:
+repeat(10, console.log);
+
+
+- CODING UPDATE 3
+FUNGSI SIFATNYA AKAN MENGECEK SCR GLOBAL
+BKN LOCAL
+
+CONTOH:
+//DISINI GLOBAL
+
+function(){
+//DISINI CODING INDUK FUNGSI
+var lana = "AGI";
+
+setTimeout(function(){
+//DISINI CODING ANAK FUNGSI
+	lana = "lana" ? "IYA" : "BKN";
+},600);
+
+}
+
+MAKA variabel lana AKAN MENGECEK KELUAR
+FUNGSI INDUKNYA BKN NGECEK VARIABEL DALAM INDUK
+INI JUGA KARNA fungsi setTimeout adalah fungsi bawaan
+javascript yang kategorinya termasuk variabel global.
+JIKA CODING DI ATAS DI JALANKAN AKAN EROR
+KARNA variabel lana tidak ada di global SEDANGKAN
+JIKA CEK DI GLOBAL PROGRAM AKAN MENGABAIKAN FUNGSI
+
+- CODING UPDATE 2
+ARROW FUNCTION TIDAK BISA MENGENALI THIS
+
+CONTOH:
+()=>{
+	console.log(`${this.nama}`);
+
+}
+
+ADA THIS.NAMA MAKA AKAN EROR
+
+NOTE: ARROW FUNCTION HANYA COCOK UNTUK
+CHILD FUNGSI ATAU ANAK FUNGSI DIMANA ADA
+SEBUAH FUNGSI LALU DI DALAMNYA DI ISI
+SEBUAH FUNGSI LAGI ITU NAMANYA CHILD FUNGSI
+
+- CODING UPDATE
+EKSEKUSI CODING DI MULAI DARI BARIS PERTAMA
+KE BAWAH
+
+EKSEKUSI CODING AKAN MENGABAIKAN SEBUAH FUNGSI DAHULU
+
+CONTOH TAHAPAN EKSEKUSI CODING DI DALAM FUNGSI
+
+function( //3 ){
+var ini = "aku" //2
+
+return `Oke ${ini}`; //1
+}
+
+PERTAMA CODING AKAN MENGEKSEKUSI 
+"//1" LALU CARI VARIABEL "ini" JIKA ADA 
+MAKA SIMPAN JIKA TIDAK MAKA CARI DI
+"//3" ATAU DI SEBUT ARGUMENT/PARAMETER
+JIKA DISINI TIDAK ADA MAKA LANJUT CARI
+MULAI DARI BARIS PALING PERTAMA CODING
+HINGGA BAWAH
+
+NOTE! : VARIABEL DI DALAM FUNGSI TIDAK BISA DI PANGGIL KELUAR
+KARNA SDH MASUK LOCAL VARIABEL BKN GLOBAL VARIABEL
+
 - UNTUK CODING
 SEBAIKNYA GUNAKAN PERBANDINGAN SATU LOGIKA
 CONTOH: 
