@@ -1,5 +1,79 @@
 CATATAN PENGALAMAN IT
 
+
+- CODING 10
+fungsi async dan await
+
+const detail = document.querySelector('.class');
+
+async function siap(){ //NOTE 1
+const show = await mainpb(detail.value); //NOTE 2
+}
+
+function mainpb(value) { 
+	value + 5;
+
+}
+
+NOTE :
+NOTE 1 = BERI TAHU FUNGSI BAHWA AKAN ASYCRONIOS
+NOTE 2 = BERHENTI SEMENTARA, BERJALAN KETIKA PROMISE SELESAI 
+
+- CODING UPDATE 9
+arti return pada fungsi
+
+ function mainps(a,b) {
+	let b = a + b;
+	return b;
+	// ADA HASIL MAKA PERLU RETURN
+}
+
+function mainpubji() {
+	let a = document.querySelector('.class'); 
+	//GK PERLU RETURN KARNA HANYA MENJALANKAN SCRIPT
+}
+
+
+NOTE: JIKA FUNGSI ITU MENGEMBALIKAN NILAI/HASIL
+MAKA PAKAI RETURN JIKA TIDAK ATAU SIFATNYA
+HANYA MENJALANKAN SCRIPT MAKA TIDAK PERLU RETURN
+
+
+- CODING UPDATE 8
+SYNCHRONUS CALLBACK
+
+function tampil(nama){ //PERHATIKAN INI
+	alert(`Hai ${nama}`); //PERHATIKAN INI
+
+}
+
+function input(callback){
+	const nama = prompt("Masukkan nama: ");
+	callback(nama); //INI YG DI MAKSUD CALLBACK
+}
+
+input(halo);
+
+NOTE: PERHATIKAN DI ATAS fungsi input didalamnya ada
+fungsi lagi bernama callback(nama); di mana kata "callback"
+berasal dari parameter input dan nama berasal dari variabel
+"const nama", jika di eksekusi itu akan mentrigger fungsi
+tampil(nama); dimana di dalam parameter fungsi tampil
+ada parameter bernama "nama"
+
+- CODING UPDATE 7
+DISTRUCSION JIKA BENTUK OBJEK
+MAKA PROPERTI HARUS SAMA
+
+CONTOH :
+
+const nama = {
+	nama: 'lana' //INI HARUS SAMA
+
+};
+
+const //INI HARUS SAMA =>{nama} = nama;
+
 - CODING UPDATE 6
 FILTER,MAP,REDUCE
 
@@ -185,9 +259,10 @@ MENERJEMAHKAN KODE YG MEMBINGUNGKAN
 2. CEK VERSI JIKA BEDA BAKAL EROR
 3. CEK LIBRARY
 4. CEK SUPPORT ATAU TIDAK DGN GOOGLING KODE EROR NYA
-5. CEK TIPE DATA BAIK DB DAN CODING
+5. CEK TIPE DATA BAIK DB DAN CODING SERTA PARAMETERNYA
 6. CEK AKSES HEADER ADA CORS DLL
-7. CEK IQ (KDG KITA MERASA SDH BENAR SEMUA
+7. CEK VARIABEL APAKAH SAMA DGN VARIABEL BAWAAN PHP/NODE DLL
+8. CEK IQ (KDG KITA MERASA SDH BENAR SEMUA
 TAPI BODOH DALAM BEBERAPA SISI)
 
 - HEXADESIMAL TERDIRI 16 KARAKTER

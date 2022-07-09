@@ -1,0 +1,318 @@
+CATATAN PENGALAMAN NODE JS
+
+-UPDATE 17
+INSTALL NODEMON
+npm i -g nodemon //scr global
+npm uninstall -g nodemon //uninstall scr global
+
+-UPDATE 16
+JIKA NODE JS EROR :
+ CEK VERSI
+ CEK TIPE DATA PARAMETER
+ CEK TIPE DATA VARIABEL
+
+-UPDATE CODING 15
+DEPENDENCIES ADALAH PAKET DARI NPM ATAU
+LIBRARY PIHAK 3 DARI NPM
+
+-UPDATE CODING 14
+PENJELASAN VERSION SIMANTIK
+
+VERSI AWAL :
+0.1.0 (SEBELUM RILIS "NON-STABIL")
+1.0.0 (SUDAH RILIS "STABIL")
+X.Y.Z (MAJOR.MINOR.PATCH)
+
+X = NAIKKAN +1 JIKA ADA PERUBAHAN BESAR MENCANGKUP API DAN
+TEKNOLOGI BARU YANG TIDAK SUPPORT VERSI SEBELUMNYA
+
+Y = NAIKKAN +1 JIKA ADA FITUR TERBARU
+
+Z = NAIKKAN +1 JIKA INGIN PERBAIKAN BUG
+
+CONTOH:
+DEVELOPER X MEMBUAT APLIKASI Y NAMUN KURANG YAKIN TENTANG
+APLIKASINYA MAKA :
+
+0.1.0
+
+CONTOH 2:
+DEVELOPER X MEMBUAT APLIKASI Y DAN SUDAH YAKIN LALU DI RILIS
+NAMUN BEBERAPA WAKTU ADA BUG MAKA :
+1.0.1
+
+CONTOH 3:
+DEVELOPER X MEMBUAT APLIKASI Y SUDAH RILIS DAN SUDAH MEMPERBAIKI
+BUG LALU INGIN NAMBAH FITUR MAKA :
+1.1.1
+
+
+-UPDATE CODING 13
+UNTUK INISIASI JIKA INGIN MENGGUNAKAN NPM
+
+npm init 
+
+NOTE: INI SAMA SEPERTI GITHUB 
+
+
+-UPDATE CODING 12
+HARAP DI PERHATIKAN VARIABEL BIKINAN SENDIRI
+TIDAK BOLEH SAMA DENGAN VARIABEL BAWAAN NODE JS
+
+TIPE DATA CONST SIFATNYA KONSTAN ATAU TETAP JADI
+JIKA INGIN MENGGUNAKAN PERULANGAN DLL YG SIFATNYA
+BERUBAH MAKA GUNAKAN LET ATAU VAR
+
+
+-UPDATE CODING 11
+MEMBUAT CONSOLE TERMINAL DI NODE JS
+
+const console = require('readline');
+const cmd = console.createInterface({
+	input : process.stdin,
+	output : proses.stdout
+});
+
+NOTE: variabel cmd wajib di inisiasi seperti itu
+
+cmd.question('Apakah saya ganteng?', (jawab)=>{
+	
+	console.log(`${jawab} kamu ganteng banget`);
+	cmd.close();
+});
+
+NOTE: "question" adalah fungsi bawaan node js dan ".close()"
+juga sama
+
+
+-UPDATE CODING 10
+MEMBACA FILE
+
+const fs = require('fs'); //PASTIKAN INI WAJIB ADA
+
+SCR SYNC :
+fs.readFileSync('lokasi_file','jenis data/encoding');
+
+NOTE: JENIS DATA JIKA STRING MAKA ISI "utf-8"
+JIKA INGIN BERUPA BINARY DLL BACA DOKUMENTASI
+DI NODE JS VIA WEB
+
+SCR ASYNC :
+fs.readFile('lokasi_file', 'jenis data/encoding', (e , data)=> {
+	if (e) throw e;
+	console.log(data);
+
+});
+
+NOTE: parameter "data" berisi data dari file yang ingin di buka sdg
+kan parameter "e" itu jika kendala error dan throw untuk menampung
+eror scr global
+
+
+-UPDATE CODING 9
+MENULIS FILE
+
+const fs = require('fs'); //PASTIKAN INI WAJIB ADA
+
+SCR SYNC :
+fs.writeFileSync('lokasi_file','tulisan yg ingin di isi');
+
+SCR ASYNC :
+fs.writeFile('lokasi_file','isi bisa apa saja', (e)=>{
+	console.log(e);
+
+});
+
+NOTE: INI SAMA DGN > (echo "TULISAN" > file.js) JIKA VIA TERMINAL
+BASH
+
+-UPDATE CODING 8
+jika ingin menangani eror dgn Syncronous 
+pakai 
+
+try{
+
+}catch(e){
+	console.log(e);
+}
+
+JIKA PAKAI ASYNCRONOUS MAKA GK USAH KARNA
+PAKAI CALLBACK
+
+-UPDATE CODING 7
+jika ada objek dalam objek harus di kasih "," koma
+
+contoh :
+
+const objek = {
+	nama1 : {
+	}, //kasih koma
+	
+};
+
+-UPDATE CODING 6
+exports module scr banyak dgn objek
+
+contoh :
+
+const nama = 'Tar Tar';
+
+class Db {
+	constructor(){
+	console.log("hallo");
+	}
+
+}
+
+const status = {
+	pekerjaan : 'Programmer'
+}
+
+module.exports = {
+	nama : nama,
+	Db : Db,
+	status : status
+	// NAMA BEBAS : NAMA SESUAI FUNGSI/VAR DLL
+
+}
+
+NOTE: properti di isi bebas tapi isi properti di isi dgn fungsi/var dll
+harus sama dengan fungsi/var yg di buat tidak boleh beda
+
+ATAU UNTUK MEMPERSINGKAT BISA BERIKUT :
+
+module.exports = {nama , Db, status};
+
+SYARATNYA NAMA PROPERTI DAN ISI NYA HARUS SAMA TIDAK BOLEH
+BEDA JIKA DI RINGKAS
+
+
+
+-UPDATE CODING 5
+CONSTRUCTOR() 
+
+MIRIP DGN PARAMETER contoh "nama();"
+PERHATIKAN INI "();" INI SAMA SEPERTI
+SIFAT CONSTRUCTOR HANYA SAJA INI
+UNTUK BIKIN CLASS
+
+JIKA BIKIN CLASS DI DALAM NYA ADA CONSTRACTOR
+MAKA AKAN OTOMATIS TERPANGGIL BAGIAN COSTRACTORNYA
+JIKA DI INSTASIASI seperti "new nama_class" perhatikan kata
+new itu adalah instasiasi
+
+NOTE! : JIKA CLASS ADA DALAM OBJEK MAKA CARA MANGGILNYA
+BERIKUT :
+new nama_objek.nama_properti_class_nya();
+
+INGAT: NAMA KELAS DI HARAPKAN DIAWALI HURUF BESAR DULU
+
+
+-UPDATE CODING 4
+UNTUK MEMANGGIL OBJEK LAIN DALAM OBJEK MAKA
+GUNAKAN FUNGSI this
+
+CONTOH :
+
+const nama = {
+	nama: 'Gila',
+	umur: 20,
+	desk: function (a,b) => {
+	return `Nama ku ${this.nama}, usia${this.umur}`;
+	}
+};
+
+NOTE:
+LIHAT properti desk dalam objek di atas ada "${this.nama}"
+dimana bagian ".nama" itu di ambil dari properti lain yg bernama
+nama
+
+-UPDATE CODING 3
+require mencari file script/module dalam 3 urutan
+1. Core Modules (Fungsi bawaan node js)
+2. File direktori (./file)
+3. node_modules (library atau script yg di bikin pihak 3)
+
+
+
+-UPDATE CODING 2
+NODE JS MENGANUT SISTEM MODULAR
+DIMANA JIKA FILE BERNAMA INDEX.JS
+MENGAKSES FILE LAIN DGN METHOD
+require('./file_lain.js'); MAKA HANYA
+MELIHAT SCRIPT YG SIFATNYA EKSEKUSI SAJA
+DI FILE YG BERNAMA "file_lain.js" itu
+JIKA FILE ITU SIFAT NYA FUNGSI ATAU
+TIDAK ADA PERINTAH EKSEKUSI MAKA FILE
+TIDAK BERJALAN ATAU EROR 
+
+CONTOH SCRIPT YG TIDAK BISA DI KENALI :
+
+var nama = "Aku";
+
+var nama = (nama)=>{
+	return `hai ${nama}`;
+}
+
+nama("Aku"); //JIKA PAKAI INI DI FILE LAIN MAKA JALAN
+console.log(nama); //JIKA PAKAI INI DI FILE LAIN MAKA JALAN
+
+module.exports = nama; 
+// PAKAI SCRIPT INI JIKA INGIN BISA DI PANGGIL 
+VIA FILE LAIN
+
+module.exports.Nama_bebas = nama; 
+// INI UNTUK EXPORTS VARIABEL/FUNGSI DLL UNTUK DI MASUKKAN
+KE OBJEK DIMANA variabel "nama" harus sesuai nama variabel/fungsi
+yg tersedia sdgkan ".Nama_bebas" di isi sesuai keinginan
+
+DI FILE YG MANGGIL KASIH SCRIPT BERIKUT :
+const coba = require(./file_lain);
+
+UNTUK MANGGIL NYA (SCRIPT INI DI ISI DI FILE YG MANGGIL) :
+coba.Nama_Properti_Objek;
+
+UNTUK TAHU APA YANG TERJADI BIAR PAHAM
+COBA CONSOLE LOG variabel "coba" di atas MAKA
+AKAN MUNCUL WUJUD OBJEK, NAH OBJEK KAN
+MANGGIL NYA HARUS PAKAI "." (dot)
+
+CONTOH :
+
+const coba = {
+	nama : 'Aku'
+};
+
+coba.nama //INI CARA MANGGIL OBJEK
+
+
+=== NOTE OPSIONAL===
+
+JIKA SEMUA SCRIPT INI DI PANGGIL DI FILE LAIN
+MAKA TIDAK JALAN KECUALI SCRIPT DI ATAS TELAH
+DI INISIASI UNTUK DI EKSEKUSI,
+DAN JIKA INGIN SCRIPT INISIASI DARI FILE 
+YANG DIPANGGIL ITU "file_lain.js" BISA DI PANGGIL DI FILE LAIN
+TANPA PERINTAH EKSEKUSI MAKA TAMBAHKAN "module.exports"
+DAN JANGAN LUPA FILE SUMBERNYA INISIASI SEPERTI BERIKUT :
+
+const nama = require(./file_lain.js);
+
+
+
+
+- UPDATE CODING 1
+ketik "node" di terminal untuk mode
+REPL (READ EVAL PRINT LOOP)
+
+HARUS MODE REPL :
+{
+ketik "global." lalu pencet tab 2x 
+untuk tau variabel global node 
+
+atau ketik "global" lalu enter 
+menampilkan scr ringkas
+}
+
+untuk keluar,save dll mode repl ketik di
+mode repl nya ".help"
