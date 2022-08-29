@@ -1,5 +1,33 @@
 CATATAN PENGALAMAN NODE JS
 
+-UPDATE 22
+JIKA TAG HTML INGIN TERBACA DI EXPRESS MAKA
+GUNAKAN :
+
+<%- %>
+
+JIKA INGIN MANGGIL VARIABEL DLL :
+<%= %>
+
+-UPDATE 21
+CARA SET VIEW ENGINE EXPRESS
+
+app.set('view engine', 'ejs');
+
+-UPDATE 20
+MIDDLEWARE
+
+DEFAULT PAGE/ APAPUN INPUT METODE GET
+AKAN DI TANGKAP, COCOK UNTUK HALAMAN EROR 404
+
+script contoh:
+
+app.get('/', (req, res) => {
+	res.status(404); //untuk beritahu header agar kode 404/eror
+	res.send('hai');
+
+});
+
 -UPDATE 19
 HARAP PERHATIKAN BERIKUT JIKA INSTALL PAKET NPM :
  -NPM INIT DAHULU

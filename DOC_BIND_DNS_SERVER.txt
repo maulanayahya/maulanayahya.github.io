@@ -1,0 +1,118 @@
+JIKA INSTALL VIA VIRTUAL BOX JGN LUPA NETWORK MODE BRIDGE NETWORK 
+PILIH DARI WIFI OR ADAPTER RJ45
+
+INSTALL NANO
+apk add nano
+
+INSTALL BIND
+apk add bind
+
+BUAT FILE NAMED.CONF DAN BUAT ZONE
+nano /etc/bind/named.conf
+
+SCRIPT NYA :
+
+options {
+	directory "/var/bind";
+	pid-file "/var/run/named.pid";
+	listen-on {127.0.0.1;192.168.43.0/24;};
+	recursion yes;
+	allow-recursion {127.0.0.1/32;192.168.43.0/24;};
+
+};
+
+zone "absen.com" IN {
+	type master;
+	file "absen.com.zone";
+
+};
+
+zone "43.168.192.in-addr.arpa" IN {
+	type master;
+	file "43.168.192.zone";
+};
+
+SETELAH SUDAH LANGSUNG SAVE
+
+LANJUT COPY TEMPLATE dari pri/127.zone and /pri/43.168.192.zone
+cp /var/bind/pri/127.zone /var/bind/43.168.192.zone
+
+LANJUT LAGI COPY TEMPLATE dari pri/localhost.zone and /pri/absen.com.zone
+cp /var/bind/pri/localhost.zone /var/bind/absen.com.zone
+
+EDIT ZONE
+nano /var/bind/43.168.192.zone
+
+$ORIGIN 43.in-addr.arpa. <=(DEPAN NYA 43 EDIT SESUAI IP 192.168.x)
+$TTL 1W
+@			1D IN SOA	absen.com. admin.absen.com. (
+					(naikkan 1 angka)=> 2 ; serial
+							  3H ; refresh
+							15M ; retry
+							1W  ; expiry
+							1D)  ; minimum	
+
+			1D IN NS		absen.com.
+1 <=(sesuai ip server web)	1D IN PTR	absen.com.			
+
+
+SELESAI SAVE
+
+LANJUT EDIT ZONE absen.com.zone
+
+$TTL 1W
+@		 	IN SOA	absen.com. admin.absen.com. (
+					(naikkan 1 angka)=> 2 ; serial
+							  3H ; refresh
+							15M ; retry
+							1W  ; expiry
+							1D)  ; minimum	
+
+@			 IN 	NS		absen.com.
+@			 IN 	A		192.168.43.4 <=(IP WEB SERVER, JIKA SERVER DI WINDOWS MAKA PAKAI IP WINDOWS)
+
+SELESAI LALU SAVE
+
+JALANKAN BIND ZONE YANG DI BUAT
+rc-service named start
+
+CEK NSLOOKUP (MATIKAN KONEKSI INTERNET JIKA HANYA JARINGAN LAN)
+nslookup absen.com
+
+JIKA ABSEN.COM DAN ADDRESS 64.X.X.X BKN IP LOKAL GANTI RESOLV
+nano /etc/resolv.conf
+
+GANTI NAMESERVER DENGAN IP DNS SERVER 192.168.43.42 (SESUAIAN IP PC SAAT ITU)
+LALU SAVE
+
+RESTART NAMED
+rc-service named restart
+
+SETTING SAAT LINUX ALPINENNYA DI HIDUPKAN MAKA OTOMATIS LAYANAN BIND NYALA
+rc-update add named default
+
+UNTUK NONAKTIFKAN OTOMATIS NYA ITU (INI OPSIONAL JGN DI LAKUKAN)
+rc-update del named default
+
+UNTUK AKSES DOMAIN DI WINDOWS SETTING DNS SERVERNYA DAN GANTI DGN IP LINUX ALPINE
+
+UNTUK AKSES VIA ANDROID, HUBUNGKAN KE WIFI, TEKAN NAMA HOTSPOT DAN SETTING DNS
+SERVER DAHULU
+
+
+NOTED UNTUK DI PERHATIKAN :
+- HARUS DI JARINGAN YANG SAMA
+- IP DNS ITU IP LINUX ALPINE
+- JIKA INSTALL VIA VIRTUAL BOX JGN LUPA NETWORK MODE BRIDGE NETWORK
+- SAAT EDIT FILE ZONE PERHATIKAN ADA PETUNJUK
+PENJELASAN, PAHAMI
+
+PENGETAHUAN DASAR:
+- DNS RESOLVER (PENGGUNA YG REQUEST DNS SERVER)
+- DNS RECURSIVE (SERVER YG MENANGANI PENCARIAN DNS DARI RESOLVER PENGGUNA)
+
+
+
+
+
+	
