@@ -1,3 +1,18 @@
+
+PENGALAMAN EROR :
+
+- JIKA INGIN MEMANGGIL FUNGSI DI FILE LAIN PERTAMA HARUS require("path"); LALU JGN LUPA
+SELECTOR FILE UBAH SESUAI LOKASI FILE PEMANGGIL "../" JADI "./"
+
+CONTOH KASUS :
+file fungsi di direktori "./db/fungsi.php"
+
+file pemanggil di direktori "main.php" (direktori root)
+
+maka di "./db/fungsi.php" file nya jika ada selector path harus ganti yg awalnya "../" jadi "./"
+karna harus relatif terhadap file "main.php"
+
+
 tambah
 mysqli_query($database ,"INSERT INTO tabel (user) VALUES ('$var') ");
 
@@ -13,7 +28,6 @@ hapus
 mysqli_query($database, "DELETE FROM tabel WHERE field='$var' ");
 
 
-
 hapus semua
 mysqli_query($database, "DELETE FROM tabel WHERE field");
 
@@ -24,3 +38,5 @@ $data = stripslashes(strip_tags(htmlspecialchars(htmlentities($var, ENT_QOUTES))
 
 SERVER
 mysqli_real_escape_string($db, $data);
+
+
