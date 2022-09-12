@@ -1,5 +1,15 @@
 CATATAN PENGALAMAN NODE JS
 
+-UPDATE 23
+PAKE PROMISES BIAR TIDAK CALLBACK HELL
+
+file harus nama.mjs
+import dns from "dns/promises"; (Metode Promises)
+
+const ip = dns.lookup("www.lanapanel.my.id");
+
+console.info(ip.address);
+
 -UPDATE 22
 JIKA TAG HTML INGIN TERBACA DI EXPRESS MAKA
 GUNAKAN :
