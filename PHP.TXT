@@ -1,3 +1,9 @@
+- ARRAY 
+$kata = "AKU PUNYA JAJAN";
+$pisah = explode(" ", $kata); //bentuk array
+
+print_r($pisah); //untuk tahu posisi kata di index berapa, ini trik
+
 
 PENGALAMAN EROR :
 
