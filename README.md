@@ -30,7 +30,7 @@
 
 
 
-## CATATAN JIKA CODING EROR _[(KEMBALI KE DAFTAR ISI)](#DAFTAR-ISI)_
+## CATATAN JIKA CODING EROR
  *  #### Pastikan tipe data variabel benar
 
  ```
@@ -80,7 +80,7 @@
  
  * #### Jika semua sudah dilakukan namun tetap eror :
  > Solusi terakhir adalah dengan cara browsing eror yang muncul, usahakan browsing dengan bahasa inggris jika pada website bahasa indonesia belum ada solusi
- 
+ ### _[(KEMBALI KE DAFTAR ISI)](#DAFTAR-ISI)_
 ---
 
 
