@@ -29,11 +29,10 @@
  
  //TIDAK SAMA KARNA VARIABEL AWAL TIPE DATA INTEGER (ANGKA) DAN KEDUA STRING (DENGAN KUTIP)
   ```
-  ```
-    Catatan penting :
-    - Tipe data ini juga berlaku pada teknologi API, jika tipe data pada api berbeda dengan script kita maka eror
-    - Tipe data ini juga berlaku dalam penggunaan database terutama Mysql jika tipe data db dan script berbeda maka eror
-  ```
+  * Catatan penting :
+    > Tipe data ini juga berlaku pada teknologi API, jika tipe data pada api berbeda dengan script kita maka eror
+    > Tipe data ini juga berlaku dalam penggunaan database terutama Mysql jika tipe data db dan script berbeda maka eror
+    
  * #### Pastikan variabel bukan variabel bawaan
  >Variabel yang ada di script kita tidak boleh sama dengan variabel bawaan yang biasa di sebut `variabel global`
  >jika sama itu akan memunculkan eror
