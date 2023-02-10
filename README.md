@@ -2,7 +2,6 @@
 #### Dokumentasi ini bertujuan sebagai catatan teknik coding agar tidak lupa  
 ---
 ### DAFTAR ISI
-* [CATATAN PENGALAMAN CODING EROR](#CATATAN-PENGALAMAN-CODING-EROR)
 * [PHP](#PHP-1)  
 * [NODE JS](#NODEJS-1)
 * TEKNOLOGI
@@ -10,8 +9,20 @@
   * WEB SERVER SENT
   * WEB SOCKET
   * API
----  
-## CATATAN PENGALAMAN CODING EROR
+* [CATATAN JIKA CODING EROR](#CATATAN-JIKA-CODING-EROR)
+
+
+
+---    
+## PHP
+ - Membuat script wajib mencantumkan `<?php` di paling awal script dan di akhiri `?>`
+ - Sintak dasar php selalu di awali tanda `$` (dolar) dan di akhiri `;` (titik koma)
+ - Bahasa pemrograman yang `case sensitif` artinya huruf besar dan kecil tidak sama
+---
+
+
+
+## CATATAN JIKA CODING EROR
  *  #### Pastikan tipe data variabel benar
 
  ```
@@ -63,10 +74,6 @@
  > Solusi terakhir adalah dengan cara browsing eror yang muncul, usahakan browsing dengan bahasa inggris jika pada website bahasa indonesia belum ada solusi
  
 ---
-  
-## PHP
- - Membuat script wajib mencantumkan `<?php` di paling awal script dan di akhiri `?>`
- - Sintak dasar php selalu di awali tanda `$` (dolar) dan di akhiri `;` (titik koma)
- - Bahasa pemrograman yang `case sensitif` artinya huruf besar dan kecil tidak sama
+
 
 
