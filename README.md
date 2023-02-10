@@ -12,7 +12,7 @@
   * API
 ---  
 
-## [CATATAN PENGALAMAN JIKA CODING EROR](# coding-eror-1)
+## [CATATAN PENGALAMAN JIKA CODING EROR](#-coding-eror-1)
  *  #### Pastikan tipe data variabel benar
 
  ```
