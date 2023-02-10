@@ -2,13 +2,13 @@
 #### Dokumentasi ini bertujuan sebagai catatan teknik coding agar tidak lupa  
 ---
 ### DAFTAR ISI
-* [PHP](#PHP-1)  
-* [NODE JS](#NODEJS-1)
+* [PHP](#PHP)  
+* [NODE JS](#NODE-JS)
 * TEKNOLOGI
-  * HTTP
-  * WEB SERVER SENT
-  * WEB SOCKET
-  * API
+  * [HTTP](#HTTP)
+  * [WEB SERVER SENT](#WEB-SERVER-SENT)
+  * [WEB SOCKET](#WEB-SOCKET)
+  * [API](#API)
 * [CATATAN JIKA CODING EROR](#CATATAN-JIKA-CODING-EROR)
 
 
@@ -18,6 +18,14 @@
  - Membuat script wajib mencantumkan `<?php` di paling awal script dan di akhiri `?>`
  - Sintak dasar php selalu di awali tanda `$` (dolar) dan di akhiri `;` (titik koma)
  - Bahasa pemrograman yang `case sensitif` artinya huruf besar dan kecil tidak sama
+
+---
+   
+## NODE JS
+ - 
+ - 
+
+
 ---
 
 
