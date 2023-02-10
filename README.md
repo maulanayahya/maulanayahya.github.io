@@ -2,7 +2,7 @@
 #### Dokumentasi ini bertujuan sebagai catatan teknik coding agar tidak lupa  
 ---
 ### DAFTAR ISI
-* [CATATAN PENGALAMAN JIKA CODING EROR](#coding-eror-1)
+* [CATATAN PENGALAMAN JIKA CODING EROR](#coding-eror)
 * [PHP](#PHP-1)  
 * [NODE JS](#NODEJS-1)
 * TEKNOLOGI
@@ -11,7 +11,7 @@
   * WEB SOCKET
   * API
 ---  
-## coding eror 1
+### coding eror
 ## CATATAN PENGALAMAN JIKA CODING EROR
  *  #### Pastikan tipe data variabel benar
 
