@@ -30,7 +30,7 @@
 
 
 
-## CATATAN JIKA CODING EROR _[KEMBALI KE DAFTAR ISI](#DAFTAR-ISI)_
+## CATATAN JIKA CODING EROR _[(KEMBALI KE DAFTAR ISI)](#DAFTAR-ISI)_
  *  #### Pastikan tipe data variabel benar
 
  ```
