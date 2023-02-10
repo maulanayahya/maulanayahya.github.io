@@ -1,4 +1,4 @@
-# SELAMAT DATANG DI DOCS SEJARAH CODINGKU
+# SELAMAT DATANG DI DOCS SEJARAH CODING DAN IT
 #### Dokumentasi ini bertujuan sebagai catatan teknik coding agar tidak lupa  
 ---
 ### DAFTAR ISI
