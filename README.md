@@ -1,5 +1,5 @@
 # SELAMAT DATANG DI DOCS SEJARAH CODING DAN IT
-#### Dokumentasi ini bertujuan sebagai catatan teknik coding agar tidak lupa  
+#### Dokumentasi ini bertujuan sebagai catatan teknik coding saya, jika anda tertarik membagi pengalaman dunia coding silakan pull request repo ini dengan membagi pengalaman tersebut anda turut membantu saya dan juga teman-teman lain untuk menambah wawasan teknologi terbaru  
 ---
 ### DAFTAR ISI
 * [PHP](#PHP)  
